@@ -1,0 +1,514 @@
+{
+  "version": "1.4.2-2026",
+  "last_updated": "2026-03-01",
+  "disclaimer": "DISCLAIMER: This system is a prototype decision-support tool. It does not confer legal entitlement or guarantee benefits. Always verify with official government gazette portals.",
+  "schemes": [
+    {
+      "scheme_id": "PM-KISAN",
+      "name": "Pradhan Mantri Kisan Samman Nidhi",
+      "hindi_name": "प्रधानमंत्री किसान सम्मान निधि",
+      "version": "v2.1-2026",
+      "gazette_ref": "MoA&FW Notification No. 1-1/2019-Credit-I",
+      "department": "Ministry of Agriculture & Farmers Welfare",
+      "category": "Agriculture",
+      "summary": "Direct income support of ₹6,000 per year in three equal 4-monthly installments to eligible landholding farmer families.",
+      "benefit_value": "₹6,000 per year",
+      "rules": {
+        "min_age": 18,
+        "max_age": null,
+        "genders": [
+          "All"
+        ],
+        "max_annual_income": null,
+        "residence_area": [
+          "Rural",
+          "Both"
+        ],
+        "eligible_occupations": [
+          "Farmer",
+          "Agricultural Laborer"
+        ],
+        "eligible_social_categories": [
+          "All"
+        ],
+        "max_land_hectares": null,
+        "requires_bpl": false,
+        "disallow_pucca_house": false,
+        "disallow_income_tax_payer": true,
+        "disallow_govt_employee": true,
+        "special_prerequisites": [
+          "Owns cultivable agricultural land in applicant's name"
+        ],
+        "applicable_states": [
+          "All States"
+        ]
+      },
+      "required_documents": [
+        {
+          "doc_id": "DOC-AADH",
+          "name": "Aadhaar Card",
+          "description": "Biometrically linked Aadhaar of applicant",
+          "issuing_authority": "UIDAI",
+          "is_mandatory": true,
+          "alternatives": []
+        },
+        {
+          "doc_id": "DOC-LAND",
+          "name": "Land Ownership Record (Khatauni / RoR / 7/12 Extract)",
+          "description": "Official land ownership certificate proving cultivable land registered in citizen's name",
+          "issuing_authority": "Revenue Department / Patwari / Tehsildar",
+          "is_mandatory": true,
+          "alternatives": [
+            "Khasra Passbook",
+            "Digital Land Record Extract"
+          ]
+        },
+        {
+          "doc_id": "DOC-BANK",
+          "name": "Active Bank Account Passbook",
+          "description": "Bank account linked with Aadhaar NPCI mapper for Direct Benefit Transfer (DBT)",
+          "issuing_authority": "Scheduled Commercial Bank / Post Office Bank",
+          "is_mandatory": true,
+          "alternatives": [
+            "Cancelled Cheque with printed name"
+          ]
+        }
+      ],
+      "policy_passages": [
+        {
+          "passage_id": "PM-KISAN:Sec3.1",
+          "clause_no": "Section 3.1",
+          "title": "Eligible Beneficiary Definition",
+          "text": "All landholder farmer families, who have cultivable landholding in their names as per land records of the concerned State/UT, are eligible to receive benefit under the scheme, subject to the exclusion criteria prescribed in Section 4."
+        },
+        {
+          "passage_id": "PM-KISAN:Sec4.2",
+          "clause_no": "Section 4.2",
+          "title": "Institutional and Taxpayer Exclusion",
+          "text": "The following categories of beneficiaries of higher economic status shall not be eligible for benefit under the scheme: (a) All Institutional Landholders; (b) All persons who paid Income Tax in last assessment year; (c) Serving or retired officers and employees of Central/State Government Ministries, Offices and Departments."
+        },
+        {
+          "passage_id": "PM-KISAN:Sec5.4",
+          "clause_no": "Section 5.4",
+          "title": "Mandatory Aadhaar & DBT Linking",
+          "text": "Payment of financial benefits under the scheme shall be made directly into the bank accounts of the beneficiaries through the Direct Benefit Transfer (DBT) mode. Aadhaar authentication is mandatory for all beneficiaries."
+        }
+      ],
+      "application_process": {
+        "portal_url": "https://pmkisan.gov.in",
+        "offline_center": "Common Service Centre (CSC) or Local Agriculture Officer / Patwari",
+        "steps": [
+          "Visit PM-KISAN portal or nearby CSC center with Aadhaar and Land Khatauni records.",
+          "Complete e-KYC authentication via OTP or biometric sensor.",
+          "Submit application and track status via Farmer Corner registration number."
+        ]
+      }
+    },
+    {
+      "scheme_id": "PM-JAY",
+      "name": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana",
+      "hindi_name": "आयुष्मान भारत - प्रधानमंत्री जन आरोग्य योजना",
+      "version": "v3.0-2026",
+      "gazette_ref": "NHA Gazette S.O. 1290(E)",
+      "department": "National Health Authority / Ministry of Health & Family Welfare",
+      "category": "Health",
+      "summary": "Cashless secondary and tertiary hospitalization cover of up to ₹5,00,000 per family per year across empaneled public and private hospitals.",
+      "benefit_value": "₹5,00,000 cashless health cover per family/year",
+      "rules": {
+        "min_age": 0,
+        "max_age": null,
+        "genders": [
+          "All"
+        ],
+        "max_annual_income": 250000,
+        "residence_area": [
+          "Both"
+        ],
+        "eligible_occupations": [
+          "All"
+        ],
+        "eligible_social_categories": [
+          "All"
+        ],
+        "max_land_hectares": null,
+        "requires_bpl": true,
+        "disallow_pucca_house": false,
+        "disallow_income_tax_payer": true,
+        "disallow_govt_employee": true,
+        "special_prerequisites": [
+          "SECC 2011 deprivation criteria or active BPL / Ration Card holder"
+        ],
+        "applicable_states": [
+          "All States"
+        ]
+      },
+      "required_documents": [
+        {
+          "doc_id": "DOC-AADH",
+          "name": "Aadhaar Card",
+          "description": "Biometric Aadhaar of the applicant and family members",
+          "issuing_authority": "UIDAI",
+          "is_mandatory": true,
+          "alternatives": [
+            "Voter ID",
+            "Ration Card"
+          ]
+        },
+        {
+          "doc_id": "DOC-RATN",
+          "name": "Ration Card / BPL Certificate",
+          "description": "Proof of identification of family composition under NFSA / SECC database",
+          "issuing_authority": "Food & Civil Supplies Department",
+          "is_mandatory": true,
+          "alternatives": [
+            "SECC Entitlement Letter",
+            "State Antyodaya Anna Yojana Card"
+          ]
+        },
+        {
+          "doc_id": "DOC-INCM",
+          "name": "Income Certificate",
+          "description": "Proof of household annual income below ₹2,50,000",
+          "issuing_authority": "Tehsildar / Sub-Divisional Magistrate (SDM)",
+          "is_mandatory": false,
+          "alternatives": [
+            "Self-declaration verified by Gram Panchayat"
+          ]
+        }
+      ],
+      "policy_passages": [
+        {
+          "passage_id": "PM-JAY:Sec2.1",
+          "clause_no": "Section 2.1",
+          "title": "Target Household Eligibility & Coverage",
+          "text": "PM-JAY provides health insurance cover of ₹5 Lakh per eligible family per annum for secondary and tertiary care hospitalization. Target households are identified based on deprivation and occupational criteria of SECC 2011 and NFSA beneficiary databases."
+        },
+        {
+          "passage_id": "PM-JAY:Sec3.3",
+          "clause_no": "Section 3.3",
+          "title": "Pre-existing Disease Coverage & Portability",
+          "text": "All pre-existing medical conditions are covered from day one of scheme enrollment. There is no restriction on family size, age, or gender. Treatment is completely cashless and paperless at all empaneled hospitals across India."
+        },
+        {
+          "passage_id": "PM-JAY:Sec4.1",
+          "clause_no": "Section 4.1",
+          "title": "Exclusion Criteria",
+          "text": "Households paying income tax, possessing mechanized four-wheelers, or having government employees residing within the household unit are excluded from the subsidized beneficiary pool."
+        }
+      ],
+      "application_process": {
+        "portal_url": "https://beneficiary.nha.gov.in",
+        "offline_center": "Ayushman Mitra desk at any Empaneled Government or Private Hospital / CSC",
+        "steps": [
+          "Check eligibility on the NHA portal using mobile number or Ration Card ID.",
+          "Visit an Ayushman Mitra helpdesk at an empaneled hospital with Aadhaar and Ration Card.",
+          "Complete biometric e-KYC and download Ayushman Golden Card instantly."
+        ]
+      }
+    },
+    {
+      "scheme_id": "PMAY-G",
+      "name": "Pradhan Mantri Awas Yojana - Gramin",
+      "hindi_name": "प्रधानमंत्री आवास योजना - ग्रामीण",
+      "version": "v2.0-2026",
+      "gazette_ref": "Ministry of Rural Development Framework No. G-31011/2/2016",
+      "department": "Ministry of Rural Development",
+      "category": "Housing",
+      "summary": "Financial grant of ₹1,20,000 (plains) to ₹1,30,000 (hilly/difficult areas) plus 90 days MGNREGA unskilled labor support for construction of a permanent pucca house.",
+      "benefit_value": "₹1,20,000 - ₹1,30,000 housing construction grant",
+      "rules": {
+        "min_age": 18,
+        "max_age": null,
+        "genders": [
+          "All"
+        ],
+        "max_annual_income": 180000,
+        "residence_area": [
+          "Rural"
+        ],
+        "eligible_occupations": [
+          "All"
+        ],
+        "eligible_social_categories": [
+          "All"
+        ],
+        "max_land_hectares": null,
+        "requires_bpl": false,
+        "disallow_pucca_house": true,
+        "disallow_income_tax_payer": true,
+        "disallow_govt_employee": true,
+        "special_prerequisites": [
+          "Houseless or living in kutcha / dilapidated house with 0-2 rooms"
+        ],
+        "applicable_states": [
+          "All States"
+        ]
+      },
+      "required_documents": [
+        {
+          "doc_id": "DOC-AADH",
+          "name": "Aadhaar Card",
+          "description": "Aadhaar number of applicant and adult family members",
+          "issuing_authority": "UIDAI",
+          "is_mandatory": true,
+          "alternatives": []
+        },
+        {
+          "doc_id": "DOC-BANK",
+          "name": "Bank / Post Office Account Passbook",
+          "description": "Active DBT-enabled savings account for installment disbursements",
+          "issuing_authority": "Bank / India Post",
+          "is_mandatory": true,
+          "alternatives": []
+        },
+        {
+          "doc_id": "DOC-GEOH",
+          "name": "Geo-tagged Photo of Kutcha House / Land Site",
+          "description": "Photographic inspection of existing dilapidated dwelling site by Gram Panchayat officer",
+          "issuing_authority": "Gram Rozgar Sahayak / Panchayat Secretary",
+          "is_mandatory": true,
+          "alternatives": []
+        },
+        {
+          "doc_id": "DOC-MGNREGA",
+          "name": "MGNREGA Job Card",
+          "description": "Job card number to avail 90/95 person-days of construction wages",
+          "issuing_authority": "Gram Panchayat",
+          "is_mandatory": true,
+          "alternatives": []
+        }
+      ],
+      "policy_passages": [
+        {
+          "passage_id": "PMAY-G:Sec1.2",
+          "clause_no": "Section 1.2",
+          "title": "Objective and Scope",
+          "text": "The objective of PMAY-G is to provide a pucca house with basic amenities to all houseless households and households living in kutcha and dilapidated houses in rural areas."
+        },
+        {
+          "passage_id": "PMAY-G:Sec2.4",
+          "clause_no": "Section 2.4",
+          "title": "Exclusion Criteria: 13-Point Deprivation Check",
+          "text": "Any household possessing any of the following 13 assets/conditions is automatically excluded: (i) Motorized two/three/four wheeler; (ii) Pucca house with more than two rooms; (iii) Any member as a government servant; (iv) Paying income tax or professional tax; (v) Landholding exceeding 2.5 acres irrigated or 5 acres un-irrigated."
+        },
+        {
+          "passage_id": "PMAY-G:Sec4.1",
+          "clause_no": "Section 4.1",
+          "title": "Staged Disbursement Linked to Geotagging",
+          "text": "Financial assistance is disbursed directly into beneficiary bank accounts in three to four milestone-based installments verified through the AwaasApp geo-tagged photographic inspection."
+        }
+      ],
+      "application_process": {
+        "portal_url": "https://www.myscheme.gov.in/schemes/pmayg",
+        "offline_center": "Gram Panchayat Office / Block Development Office (BDO)",
+        "steps": [
+          "Verify name in Awaas+ permanent waitlist at Gram Sabha meeting.",
+          "Submit Aadhaar, bank passbook, and MGNREGA card to Panchayat Secretary.",
+          "Field verification and geo-tagging of construction milestones via AwaasSoft."
+        ]
+      }
+    },
+    {
+      "scheme_id": "PM-SVANIDHI",
+      "name": "PM Street Vendor's AtmaNirbhar Nidhi",
+      "hindi_name": "पीएम स्ट्रीट वेंडर्स आत्मनिर्भर निधि",
+      "version": "v2.5-2026",
+      "gazette_ref": "MoHUA Notification K-12017/2/2020",
+      "department": "Ministry of Housing and Urban Affairs",
+      "category": "Livelihood",
+      "summary": "Affordable collateral-free working capital loan of ₹10,000 (1st tranche), ₹20,000 (2nd tranche), and ₹50,000 (3rd tranche) with 7% interest subsidy for urban street vendors.",
+      "benefit_value": "Collateral-free working capital loans ₹10k - ₹50k + 7% interest subsidy",
+      "rules": {
+        "min_age": 18,
+        "max_age": null,
+        "genders": [
+          "All"
+        ],
+        "max_annual_income": 300000,
+        "residence_area": [
+          "Urban",
+          "Both"
+        ],
+        "eligible_occupations": [
+          "Street Vendor",
+          "Hawker",
+          "Daily Wage Earner",
+          "Artisan"
+        ],
+        "eligible_social_categories": [
+          "All"
+        ],
+        "max_land_hectares": null,
+        "requires_bpl": false,
+        "disallow_pucca_house": false,
+        "disallow_income_tax_payer": false,
+        "disallow_govt_employee": true,
+        "special_prerequisites": [
+          "Engaged in vending in urban areas on or before March 24, 2020 or possesses Urban Local Body Letter of Recommendation"
+        ],
+        "applicable_states": [
+          "All States"
+        ]
+      },
+      "required_documents": [
+        {
+          "doc_id": "DOC-AADH",
+          "name": "Aadhaar Card",
+          "description": "Aadhaar proof with phone number linked",
+          "issuing_authority": "UIDAI",
+          "is_mandatory": true,
+          "alternatives": []
+        },
+        {
+          "doc_id": "DOC-VEND",
+          "name": "Vending Certificate / Urban Local Body Identity Card",
+          "description": "Certificate of Vending (CoV) or Letter of Recommendation (LoR) issued by Town Vending Committee (TVC)",
+          "issuing_authority": "Urban Local Body (ULB) / Municipality / Municipal Corporation",
+          "is_mandatory": true,
+          "alternatives": [
+            "ULB Letter of Recommendation (LoR)",
+            "White Ration Card with Vendor Survey Slip"
+          ]
+        },
+        {
+          "doc_id": "DOC-BANK",
+          "name": "Active Bank Account Passbook",
+          "description": "Savings bank account with IFSC code for loan credit",
+          "issuing_authority": "Bank / Post Office",
+          "is_mandatory": true,
+          "alternatives": []
+        }
+      ],
+      "policy_passages": [
+        {
+          "passage_id": "PM-SVANIDHI:Sec2.1",
+          "clause_no": "Section 2.1",
+          "title": "Target Beneficiaries",
+          "text": "The scheme is available to all street vendors engaged in vending in urban areas as on or before March 24, 2020. The eligible vendors are identified based on survey lists or Certificate of Vending issued by Urban Local Bodies (ULBs)."
+        },
+        {
+          "passage_id": "PM-SVANIDHI:Sec3.2",
+          "clause_no": "Section 3.2",
+          "title": "Loan Tranches and Interest Subsidy",
+          "text": "Vendors can avail an initial working capital loan of up to ₹10,000 for a 1-year tenure. On timely or early repayment, vendors become eligible for a second loan tranche of ₹20,000 and subsequently ₹50,000. Beneficiaries receive an interest subsidy of 7% per annum credited quarterly directly to their bank account."
+        },
+        {
+          "passage_id": "PM-SVANIDHI:Sec5.1",
+          "clause_no": "Section 5.1",
+          "title": "Digital Transaction Incentive",
+          "text": "Participating vendors are provided cashback incentives of up to ₹1,200 per year (₹100 per month) for adopting digital transactions through QR codes (UPI)."
+        }
+      ],
+      "application_process": {
+        "portal_url": "https://pmsvanidhi.mohua.gov.in",
+        "offline_center": "Urban Local Body (ULB) Office / Common Service Center (CSC)",
+        "steps": [
+          "Verify Certificate of Vending (CoV) or request Letter of Recommendation (LoR) from local Municipal Corporation.",
+          "Apply online on PM SVANidhi portal or through a Banking Correspondent / CSC.",
+          "Lending institution sanctions and disburses ₹10,000 directly into the vendor bank account within 7 days."
+        ]
+      }
+    },
+    {
+      "scheme_id": "SSY",
+      "name": "Sukanya Samriddhi Yojana",
+      "hindi_name": "सुकन्या समृद्धि योजना",
+      "version": "v2.0-2026",
+      "gazette_ref": "Ministry of Finance GSR 914(E)",
+      "department": "Department of Posts / Ministry of Finance",
+      "category": "Women & Child",
+      "summary": "High-interest sovereign savings account for a girl child (age under 10) with complete tax exemption (EEE status) and compound annual interest (8.2%+).",
+      "benefit_value": "8.2% tax-free compound interest + ₹15 Lakh+ maturity savings corpus",
+      "rules": {
+        "min_age": 18,
+        "max_age": 70,
+        "genders": [
+          "All"
+        ],
+        "max_annual_income": null,
+        "residence_area": [
+          "Both"
+        ],
+        "eligible_occupations": [
+          "All"
+        ],
+        "eligible_social_categories": [
+          "All"
+        ],
+        "max_land_hectares": null,
+        "requires_bpl": false,
+        "disallow_pucca_house": false,
+        "disallow_income_tax_payer": false,
+        "disallow_govt_employee": false,
+        "special_prerequisites": [
+          "Natural or legal guardian of a girl child aged 10 years or younger (maximum 2 accounts per family)"
+        ],
+        "applicable_states": [
+          "All States"
+        ]
+      },
+      "required_documents": [
+        {
+          "doc_id": "DOC-GIRL-BC",
+          "name": "Birth Certificate of Girl Child",
+          "description": "Official birth certificate of the girl child bearing the name of parent/guardian",
+          "issuing_authority": "Registrar of Births & Deaths / Municipal Corporation",
+          "is_mandatory": true,
+          "alternatives": [
+            "Hospital Discharge Certificate certified by Competent Authority"
+          ]
+        },
+        {
+          "doc_id": "DOC-AADH",
+          "name": "Aadhaar Card of Parent/Guardian",
+          "description": "Identity and address proof of legal guardian",
+          "issuing_authority": "UIDAI",
+          "is_mandatory": true,
+          "alternatives": [
+            "Voter ID",
+            "Passport"
+          ]
+        },
+        {
+          "doc_id": "DOC-PAN",
+          "name": "PAN Card of Guardian",
+          "description": "PAN number for financial transaction recording",
+          "issuing_authority": "Income Tax Department",
+          "is_mandatory": true,
+          "alternatives": [
+            "Form 60"
+          ]
+        }
+      ],
+      "policy_passages": [
+        {
+          "passage_id": "SSY:Sec2.1",
+          "clause_no": "Section 2.1",
+          "title": "Account Opening Conditions",
+          "text": "The account may be opened by the natural or legal guardian in the name of a girl child from the date of her birth until she attains the age of ten years. A guardian can open only one account in the name of one girl child and maximum two accounts in the name of two different girl children."
+        },
+        {
+          "passage_id": "SSY:Sec3.4",
+          "clause_no": "Section 3.4",
+          "title": "Deposit Rules & Maturity Period",
+          "text": "The account can be opened with an initial deposit of ₹250 and minimum annual deposit of ₹250 up to a maximum of ₹1,50,000 per financial year. Deposits can be made up to 15 years from account opening, and maturity is achieved 21 years from the date of opening."
+        },
+        {
+          "passage_id": "SSY:Sec5.2",
+          "clause_no": "Section 5.2",
+          "title": "Exempt-Exempt-Exempt (EEE) Tax Status",
+          "text": "Investments qualify for deduction under Section 80C of the Income Tax Act. The interest accrued in the account and the final maturity proceeds are entirely exempt from income tax."
+        }
+      ],
+      "application_process": {
+        "portal_url": "https://www.indiapost.gov.in",
+        "offline_center": "Any Post Office or authorized Public / Private Bank Branch",
+        "steps": [
+          "Collect SSY Account Opening Form (Form-1) at any Post Office or bank.",
+          "Attach girl child birth certificate, guardian Aadhaar, and passport photo.",
+          "Deposit initial amount (min ₹250) and receive physical SSY passbook."
+        ]
+      }
+    }
+  ]
+}

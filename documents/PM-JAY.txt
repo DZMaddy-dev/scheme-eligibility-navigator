@@ -1,0 +1,29 @@
+NATIONAL HEALTH AUTHORITY - MINISTRY OF HEALTH & FAMILY WELFARE
+OPERATIONAL GUIDELINES: AYUSHMAN BHARAT - PRADHAN MANTRI JAN AROGYA YOJANA (AB PM-JAY)
+Gazette Ref: S.O. 1290(E) | Version: 3.0-2026 | Last Updated: 2026-03-01
+Applicability: Pan-India (All Participating States & Union Territories)
+
+1. SCHEME OBJECTIVE AND SCOPE
+1.1 Ayushman Bharat PM-JAY aims to provide health protection cover to prevent catastrophic health expenditures pushing poor families into poverty.
+1.2 PM-JAY provides a cashless and paperless health insurance cover of up to Rs. 5,00,000/- per family per year for secondary and tertiary hospitalization across empaneled public and private healthcare providers.
+
+2. ELIGIBILITY CRITERIA
+2.1 Target Beneficiaries: Identification of eligible households is based on the deprivation and occupational criteria of the Socio-Economic and Caste Census (SECC) 2011 for rural and urban areas, expanded to include active National Food Security Act (NFSA) / BPL Ration Card holders.
+2.2 Household Income Ceiling: Household annual income must be below Rs. 2,50,000/- per annum.
+2.3 Age and Gender: No restrictions on age, family size, or gender. Every family member is covered from day one.
+2.4 State Applicability: Active across participating States and Union Territories with nation-wide portability of hospital treatment.
+
+3. EXCLUSION CRITERIA
+3.1 Households having members paying Income Tax or Professional Tax are excluded.
+3.2 Households owning a motorized four-wheeler, mechanized fishing boat, or agricultural equipment over specified limits are excluded.
+3.3 Households with any member serving as a regular government or public sector employee are excluded.
+
+4. MANDATORY REQUIRED DOCUMENTS
+4.1 Aadhaar Card: Mandatory identity proof for all enrolled family members.
+4.2 Ration Card / BPL Certificate: Official ration card (NFSA / State AYY Card) proving family composition.
+4.3 Income Certificate: Official proof of income issued by Tehsildar/SDM (or verified Gram Panchayat BPL list).
+
+5. IMPLEMENTATION AND CLAIM MECHANISM
+5.1 Beneficiaries can check eligibility on the Beneficiary Portal (https://beneficiary.nha.gov.in) using mobile number or Ration Card ID.
+5.2 Ayushman Golden Cards are issued free of cost at Common Service Centers (CSCs) and hospital Ayushman Mitra helpdesks.
+5.3 Hospitalization is 100% cashless, covering medicines, diagnostics, pre-hospitalization (3 days), and post-hospitalization (15 days) care.

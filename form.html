@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Schemes | YojanaSaarthi</title>
+    <!-- Using Google Fonts matching the homepage -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS VARIABLES & COLOR PALETTE --- */
+        :root {
+            --bg-page: #FDFCF8; 
+            --text-main: #1A2942; 
+            --text-muted: #4A5568; 
+            --primary-green: #3B7254; 
+            --primary-green-hover: #2F5C43;
+            --accent-saffron: #E88D67; 
+            --logo-blue: #274472;
+            --logo-mustard: #C98E37;
+            --border-rust: #B93C31;
+            
+            --border-radius: 20px;
+            --font-heading: 'Merriweather', serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --card-shadow: 0 12px 30px rgba(26, 41, 66, 0.06);
+            --input-border: #D1D5DB;
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            background-color: transparent;
+        }
+        .logo-container {
+            display: flex; align-items: center; gap: 12px; cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .logo-container:hover { opacity: 0.8; }
+        .logo-icon { width: 38px; height: 38px; }
+        .logo-text { font-size: 1.65rem; font-weight: 800; letter-spacing: -0.5px; }
+        .logo-blue { color: var(--logo-blue); }
+        .logo-mustard { color: var(--logo-mustard); }
+        
+        .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            font-weight: 500; color: var(--text-muted); transition: color 0.2s ease; position: relative;
+        }
+        .nav-links a:hover { color: var(--text-main); }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0;
+            background-color: var(--logo-mustard); transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Language Selector UI */
+        .lang-selector {
+            position: relative;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--logo-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(39, 68, 114, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+        }
+        .lang-selector:hover { background: rgba(39, 68, 114, 0.1); }
+        .lang-dropdown {
+            display: none; position: absolute; top: 110%; right: 0;
+            background: white; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            padding: 0.5rem 0; min-width: 140px; z-index: 100;
+        }
+        .lang-selector:hover .lang-dropdown { display: block; }
+        .lang-dropdown div {
+            padding: 0.6rem 1.2rem; font-size: 0.95rem; font-weight: 500;
+            color: var(--text-main); transition: background 0.2s; cursor: pointer;
+        }
+        .lang-dropdown div:hover { background: rgba(39, 68, 114, 0.05); color: var(--logo-blue); }
+
+        /* --- FORM PAGE WRAPPER --- */
+        .page-wrapper {
+            flex: 1; padding: 2rem 5%; max-width: 1250px; margin: 0 auto; width: 100%;
+        }
+
+        /* Form Header */
+        .form-header {
+            text-align: center; margin-bottom: 2.2rem;
+        }
+        .form-header h1 {
+            font-family: var(--font-heading); font-size: 2.4rem; color: var(--text-main); margin-bottom: 0.4rem;
+        }
+        .form-header p {
+            font-size: 1.1rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 0.8rem auto;
+        }
+        .accessibility-note {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #EAF2ED; color: var(--primary-green);
+            padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500;
+        }
+
+        /* Main Form Card with Maithili Frame Borders */
+        .form-card {
+            background: white; border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow); overflow: hidden;
+            display: flex; min-height: 580px; position: relative;
+            border: 2px solid rgba(185, 60, 49, 0.15);
+        }
+
+        /* Top Traditional Maithili Motif Border */
+        .maithili-border-top {
+            position: absolute; top: 0; left: 0; width: 100%; height: 12px;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,12 10,0 20,12' fill='%23274472'/%3E%3Cpolygon points='20,12 30,0 40,12' fill='%23B93C31'/%3E%3C/svg%3E");
+            background-repeat: repeat-x; z-index: 10;
+        }
+
+        /* Left Panel - Interactive Journey Tracker */
+        .journey-panel {
+            width: 290px; background: rgba(26, 41, 66, 0.02);
+            padding: 3rem 1.8rem; border-right: 1px solid rgba(0,0,0,0.06);
+            padding-top: 3.5rem;
+        }
+        .journey-panel h3 {
+            font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 700;
+        }
+        .journey-list { list-style: none; }
+        .journey-list li {
+            padding: 0.6rem 0.5rem; display: flex; align-items: center; gap: 12px;
+            color: var(--text-muted); font-weight: 500; font-size: 0.95rem;
+            border-radius: 8px; cursor: pointer; transition: all 0.2s ease;
+        }
+        .journey-list li:hover { background: rgba(39, 68, 114, 0.04); color: var(--text-main); }
+        .journey-list li.completed { color: var(--primary-green); }
+        .journey-list li.active { color: var(--logo-blue); font-weight: 600; background: rgba(39, 68, 114, 0.08); }
+        
+        .status-icon {
+            width: 20px; height: 20px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0;
+        }
+        li.completed .status-icon { background: var(--primary-green); color: white; }
+        li.active .status-icon { background: var(--logo-blue); border: 4px solid #E6EDF5; color: white; }
+        li.pending .status-icon { border: 2px solid #CBD5E1; }
+
+        /* Right Panel - Questions */
+        .question-panel {
+            flex: 1; padding: 3.5rem 4rem; display: flex; flex-direction: column; position: relative;
+        }
+        
+        /* Mobile Progress Tracker */
+        .mobile-progress { display: none; margin-bottom: 2rem; }
+        .progress-text { font-weight: 600; color: var(--logo-blue); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .progress-bar { width: 100%; height: 6px; background: #E2E8F0; border-radius: 3px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--logo-blue); transition: width 0.3s ease; }
+
+        /* Step Containers */
+        .step-container { display: none; animation: fadeIn 0.4s ease; flex: 1; flex-direction: column; justify-content: space-between; }
+        .step-container.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        .question-eng { font-family: var(--font-heading); font-size: 1.7rem; color: var(--text-main); margin-bottom: 0.3rem; }
+        .question-hin { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 400; }
+
+        /* Error Alert Prompt */
+        .validation-alert {
+            display: none; color: #B93C31; background: #FDF2F2; border: 1px solid #F5C6CB;
+            padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem;
+            animation: shake 0.3s ease;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+
+        /* Inputs & Selectable Options */
+        .input-group { margin-bottom: 1rem; }
+        input[type="number"], select {
+            width: 100%; max-width: 420px; padding: 1rem 1.2rem; font-size: 1.1rem;
+            border: 2px solid var(--input-border); border-radius: 12px;
+            font-family: var(--font-body); color: var(--text-main); outline: none;
+            transition: border-color 0.2s; background: white; cursor: pointer;
+        }
+        input[type="number"]:focus, select:focus { border-color: var(--logo-blue); }
+
+        .options-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.9rem; margin-bottom: 1rem;
+        }
+        .option-card {
+            border: 2px solid var(--input-border); border-radius: 12px; padding: 1rem;
+            cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 12px;
+            font-weight: 500; font-size: 1rem; color: var(--text-main); background: white;
+        }
+        .option-card:hover { border-color: var(--logo-mustard); background: #FCFAED; }
+        .option-card.selected {
+            border-color: var(--primary-green); background: #F0F7F3;
+            box-shadow: 0 4px 12px rgba(59, 114, 84, 0.08);
+        }
+        .option-icon { font-size: 1.3rem; }
+
+        .option-card.unsure { background: #F8FAFC; border-color: #CBD5E1; border-style: dashed; }
+        .option-card.unsure:hover { border-color: var(--text-muted); background: #F1F5F9; }
+        .option-card.unsure.selected { border-color: var(--logo-blue); background: #EBF2FA; }
+
+        /* Dynamic Document Checklist UI Styles (Step 8) */
+        .doc-scroll-area {
+            max-height: 340px; overflow-y: auto; padding-right: 6px; margin-bottom: 1rem;
+        }
+        .doc-category-title {
+            font-family: var(--font-heading); font-size: 1.1rem; color: var(--logo-blue);
+            margin-top: 1.2rem; margin-bottom: 0.8rem; padding-bottom: 0.3rem; border-bottom: 2px solid #EDF2F7;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .doc-category-title:first-of-type { margin-top: 0; }
+
+        .doc-item-card {
+            background: #FDFCF8; border: 2px solid #E2E8F0; border-radius: 12px;
+            padding: 1.2rem; margin-bottom: 1rem; transition: all 0.2s ease;
+        }
+        .doc-item-card:hover { border-color: #CBD5E1; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+
+        .doc-item-header {
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap;
+        }
+        .doc-name { font-size: 1.05rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+        .doc-desc { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+        /* Status Selection Options (Have / Don't Have / Not Sure) */
+        .status-options {
+            display: flex; gap: 8px; flex-wrap: wrap;
+        }
+        .status-btn {
+            padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+            cursor: pointer; border: 2px solid #E2E8F0; background: white; color: var(--text-muted);
+            display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;
+        }
+        .status-btn.have.active { background: #EAF2ED; color: var(--primary-green); border-color: var(--primary-green); }
+        .status-btn.missing.active { background: #FDF2F2; color: #B93C31; border-color: #B93C31; }
+        .status-btn.unsure.active { background: #EBF2FA; color: var(--logo-blue); border-color: var(--logo-blue); }
+
+        /* Expandable "Why is this needed?" & Source Evidence */
+        .why-toggle {
+            font-size: 0.85rem; color: var(--logo-blue); font-weight: 600; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 4px; margin-top: 0.6rem; background: none; border: none;
+        }
+        .why-toggle:hover { text-decoration: underline; }
+
+        .why-content {
+            display: none; margin-top: 0.6rem; padding: 0.8rem; background: white; border-radius: 8px;
+            border-left: 3px solid var(--logo-blue); font-size: 0.85rem; color: var(--text-muted);
+        }
+        .why-content.open { display: block; }
+        .source-evidence {
+            margin-top: 0.4rem; font-style: italic; font-size: 0.8rem; color: #64748B;
+        }
+
+        /* Missing Document Guidance Box */
+        .missing-guidance {
+            display: none; margin-top: 0.8rem; padding: 0.8rem; background: #FFF5F5; border-radius: 8px;
+            border-left: 3px solid #B93C31; font-size: 0.85rem; color: #7F1D1D;
+        }
+        .missing-guidance.open { display: block; }
+        .missing-guidance a { color: #B93C31; font-weight: 700; text-decoration: underline; }
+
+        /* Unsure Guidance Box */
+        .unsure-guidance {
+            display: none; margin-top: 0.8rem; padding: 0.8rem; background: #F0F7F3; border-radius: 8px;
+            border-left: 3px solid var(--primary-green); font-size: 0.85rem; color: #1C4532;
+        }
+        .unsure-guidance.open { display: block; }
+        .unsure-guidance a { color: var(--primary-green); font-weight: 700; text-decoration: underline; }
+
+        /* Voice Assistant Feature UI */
+        .voice-section {
+            margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #EDF2F7; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+        }
+        .btn-voice {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: white; border: 2px solid #E2E8F0; color: var(--logo-blue);
+            padding: 0.5rem 1.1rem; border-radius: 50px; font-weight: 600; cursor: pointer;
+            font-size: 0.9rem; transition: all 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .btn-voice:hover { border-color: var(--logo-blue); background: #F8FAFC; }
+        .btn-voice.listening {
+            border-color: var(--logo-mustard); color: var(--logo-mustard);
+            background: #FCFAED; animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(201, 142, 55, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(201, 142, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 142, 55, 0); }
+        }
+        .voice-helper { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Navigation Action Controls */
+        .form-nav {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid #EDF2F7;
+        }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 600; font-size: 1rem;
+            border: none; cursor: pointer; transition: all 0.2s ease;
+        }
+        .btn-back { background: transparent; color: var(--text-muted); }
+        .btn-back:hover { color: var(--text-main); background: rgba(0,0,0,0.04); }
+        .btn-next {
+            background-color: var(--primary-green); color: white;
+            box-shadow: 0 4px 12px rgba(59, 114, 84, 0.2);
+        }
+        .btn-next:hover { background-color: var(--primary-green-hover); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(59, 114, 84, 0.3); }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 900px) {
+            .journey-panel { display: none; }
+            .mobile-progress { display: block; }
+            .question-panel { padding: 2.5rem 2rem; }
+            .form-card { min-height: auto; }
+        }
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .form-header h1 { font-size: 1.6rem; }
+            .question-eng { font-size: 1.35rem; }
+            .question-hin { font-size: 1.05rem; }
+            .options-grid { grid-template-columns: 1fr; }
+            .btn { padding: 0.7rem 1.3rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo-container" onclick="window.location.href='index.html'">
+            <svg class="logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="18" r="11" fill="var(--logo-mustard)" />
+                <polygon points="27,5 5,13 13,17" fill="var(--logo-blue)" />
+                <polygon points="27,5 13,17 19,27" fill="#132238" />
+                <polygon points="13,17 13,24 16.5,20.5" fill="#FDFCF8" />
+            </svg>
+            <div class="logo-text">
+                <span class="logo-blue">Yojana</span><span class="logo-mustard">Saarthi</span>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">How It Works</a></li>
+            </ul>
+
+            <!-- Multilingual Selector -->
+            <div class="lang-selector">
+                🌐 English ▼
+                <div class="lang-dropdown">
+                    <div onclick="setLanguage('en')">English</div>
+                    <div onclick="setLanguage('hi')">हिंदी</div>
+                    <div onclick="setLanguage('bn')">বাংলা</div>
+                    <div onclick="setLanguage('mr')">मराठी</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN FORM WRAPPER -->
+    <div class="page-wrapper">
+        
+        <div class="form-header">
+            <h1 id="headerTitle">Let's find schemes for you</h1>
+            <p id="headerSubtitle">Tell us about yourself and your available documents. We'll match you with eligible government schemes instantly.</p>
+            <div class="accessibility-note">
+                ✓ Interactive guidance • Fill out fields to proceed safely.
+            </div>
+        </div>
+
+        <div class="form-card">
+            <!-- Maithili Traditional Border Accent -->
+            <div class="maithili-border-top"></div>
+
+            <!-- Left Panel (Interactive Journey Tracker - Fully Clickable) -->
+            <aside class="journey-panel">
+                <h3>Your Journey</h3>
+                <ul class="journey-list" id="journeyList">
+                    <li onclick="jumpToStep(1)" id="nav-step-1" class="active"><div class="status-icon"></div> Age</li>
+                    <li onclick="jumpToStep(2)" id="nav-step-2" class="pending"><div class="status-icon"></div> State / UT</li>
+                    <li onclick="jumpToStep(3)" id="nav-step-3" class="pending"><div class="status-icon"></div> Income</li>
+                    <li onclick="jumpToStep(4)" id="nav-step-4" class="pending"><div class="status-icon"></div> Occupation</li>
+                    <li onclick="jumpToStep(5)" id="nav-step-5" class="pending"><div class="status-icon"></div> Gender</li>
+                    <li onclick="jumpToStep(6)" id="nav-step-6" class="pending"><div class="status-icon"></div> Category</li>
+                    <li onclick="jumpToStep(7)" id="nav-step-7" class="pending"><div class="status-icon"></div> Disability</li>
+                    <li onclick="jumpToStep(8)" id="nav-step-8" class="pending"><div class="status-icon"></div> Documents</li>
+                </ul>
+            </aside>
+
+            <!-- Right Panel (Interactive Question Steps) -->
+            <section class="question-panel">
+                
+                <!-- Mobile Progress Bar -->
+                <div class="mobile-progress">
+                    <div class="progress-text" id="mobileProgressText">Step 1 of 8</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="mobileProgressBar" style="width: 12.5%;"></div>
+                    </div>
+                </div>
+
+                <!-- Validation Alert Warning -->
+                <div class="validation-alert" id="validationAlert">
+                    ⚠️ Please provide an answer or selection before proceeding to the next step.
+                </div>
+
+                <!-- STEP 1: AGE -->
+                <div class="step-container active" id="step-1">
+                    <div>
+                        <h2 class="question-eng">How old are you?</h2>
+                        <h3 class="question-hin">आपकी उम्र कितनी है?</h3>
+                        <div class="input-group">
+                            <input type="number" id="inputAge" placeholder="Enter age (e.g. 25)" min="1" max="120" oninput="clearValidation()">
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button class="btn-voice" onclick="toggleVoice(this, '21 years')">🎙️ Speak your answer</button>
+                        <span class="voice-helper">Type age or use voice command.</span>
+                    </div>
+                </div>
+
+                <!-- STEP 2: STATE & UT DROPDOWN -->
+                <div class="step-container" id="step-2">
+                    <div>
+                        <h2 class="question-eng">Which State or Union Territory do you live in?</h2>
+                        <h3 class="question-hin">आप किस राज्य या केंद्र शासित प्रदेश में रहते हैं?</h3>
+                        <div class="input-group">
+                            <select id="selectState" onchange="clearValidation()">
+                                <option value="" disabled selected>-- Select your State / UT --</option>
+                                <optgroup label="States">
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </optgroup>
+                                <optgroup label="Union Territories">
+                                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Ladakh">Ladakh</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Puducherry">Puducherry</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button class="btn-voice" onclick="toggleVoice(this, 'Uttar Pradesh')">🎙️ Speak state name</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: INCOME -->
+                <div class="step-container" id="step-3">
+                    <div>
+                        <h2 class="question-eng">What is your approximate annual family income?</h2>
+                        <h3 class="question-hin">आपके परिवार की वार्षिक आय कितनी है?</h3>
+                        <div class="options-grid" id="grid-income">
+                            <div class="option-card" onclick="selectCard(this, 'income')">Below ₹1 Lakh</div>
+                            <div class="option-card" onclick="selectCard(this, 'income')">₹1–3 Lakh</div>
+                            <div class="option-card" onclick="selectCard(this, 'income')">₹3–5 Lakh</div>
+                            <div class="option-card" onclick="selectCard(this, 'income')">₹5–10 Lakh</div>
+                            <div class="option-card" onclick="selectCard(this, 'income')">Above ₹10 Lakh</div>
+                            <div class="option-card unsure" onclick="selectCard(this, 'income')">I don't know</div>
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button class="btn-voice" onclick="toggleVoice(this, 'Between 1 to 3 Lakh')">🎙️ Speak income bracket</button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: OCCUPATION -->
+                <div class="step-container" id="step-4">
+                    <div>
+                        <h2 class="question-eng">What do you mainly do?</h2>
+                        <h3 class="question-hin">आप मुख्य रूप से क्या काम करते हैं?</h3>
+                        <div class="options-grid" id="grid-occupation">
+                            <div class="option-card" onclick="selectCard(this, 'occupation')"><span class="option-icon">🌾</span> Farmer</div>
+                            <div class="option-card" onclick="selectCard(this, 'occupation')"><span class="option-icon">🎓</span> Student</div>
+                            <div class="option-card" onclick="selectCard(this, 'occupation')"><span class="option-icon">💼</span> Salaried</div>
+                            <div class="option-card" onclick="selectCard(this, 'occupation')"><span class="option-icon">🔧</span> Self-employed</div>
+                            <div class="option-card" onclick="selectCard(this, 'occupation')"><span class="option-icon">🧱</span> Labourer</div>
+                            <div class="option-card" onclick="selectCard(this, 'occupation')"><span class="option-icon">🏠</span> Homemaker</div>
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button class="btn-voice" onclick="toggleVoice(this, 'Student')">🎙️ Speak occupation</button>
+                    </div>
+                </div>
+
+                <!-- STEP 5: GENDER -->
+                <div class="step-container" id="step-5">
+                    <div>
+                        <h2 class="question-eng">What is your gender?</h2>
+                        <h3 class="question-hin">आपका लिंग क्या है?</h3>
+                        <div class="options-grid" id="grid-gender">
+                            <div class="option-card" onclick="selectCard(this, 'gender')">Female</div>
+                            <div class="option-card" onclick="selectCard(this, 'gender')">Male</div>
+                            <div class="option-card" onclick="selectCard(this, 'gender')">Other</div>
+                            <div class="option-card unsure" onclick="selectCard(this, 'gender')">Prefer not to say</div>
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button class="btn-voice" onclick="toggleVoice(this, 'Female')">🎙️ Speak gender</button>
+                    </div>
+                </div>
+
+                <!-- STEP 6: CATEGORY -->
+                <div class="step-container" id="step-6">
+                    <div>
+                        <h2 class="question-eng">Which social category do you belong to?</h2>
+                        <h3 class="question-hin">आप किस सामाजिक वर्ग से हैं?</h3>
+                        <div class="options-grid" id="grid-category">
+                            <div class="option-card" onclick="selectCard(this, 'category')">General</div>
+                            <div class="option-card" onclick="selectCard(this, 'category')">OBC</div>
+                            <div class="option-card" onclick="selectCard(this, 'category')">SC</div>
+                            <div class="option-card" onclick="selectCard(this, 'category')">ST</div>
+                            <div class="option-card unsure" onclick="selectCard(this, 'category')">I don't know</div>
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button class="btn-voice" onclick="toggleVoice(this, 'OBC')">🎙️ Speak category</button>
+                    </div>
+                </div>
+
+                <!-- STEP 7: DISABILITY -->
+                <div class="step-container" id="step-7">
+                    <div>
+                        <h2 class="question-eng">Do you have a disability?</h2>
+                        <h3 class="question-hin">क्या आपको कोई विकलांगता है?</h3>
+                        <div class="options-grid" id="grid-disability">
+                            <div class="option-card" onclick="selectCard(this, 'disability')">Yes</div>
+                            <div class="option-card" onclick="selectCard(this, 'disability')">No</div>
+                            <div class="option-card unsure" onclick="selectCard(this, 'disability')">I'm not sure</div>
+                        </div>
+                    </div>
+                    <div class="voice-section">
+                        <button class="btn-voice" onclick="toggleVoice(this, 'No')">🎙️ Speak answer</button>
+                    </div>
+                </div>
+
+                <!-- STEP 8: DYNAMIC CONTEXT-AWARE DOCUMENT CHECKLIST -->
+                <div class="step-container" id="step-8">
+                    <div>
+                        <h2 class="question-eng">Documents You May Need</h2>
+                        <h3 class="question-hin">आपको इन दस्तावेज़ों की आवश्यकता हो सकती है</h3>
+                        
+                        <div class="doc-scroll-area" id="dynamicDocumentContainer">
+                            <!-- Injected dynamically via JS based on profile/occupation matching -->
+                        </div>
+                    </div>
+                    
+                    <div class="voice-section" style="margin-top: 0.5rem; border-top: none; padding-top: 0;">
+                        <button class="btn-voice" onclick="triggerVoiceAssistant()">🎙️ <span id="txtVoiceDoc">Ask about documents</span></button>
+                        <span class="voice-helper">Check readiness without uploading files.</span>
+                    </div>
+                </div>
+
+                <!-- Progressive Action Controls -->
+                <div class="form-nav">
+                    <button class="btn btn-back" id="btnBack" onclick="changeStep(-1)" style="visibility: hidden;">&larr; Back</button>
+                    <button class="btn btn-next" id="btnNext" onclick="handleNextClick()">Next &rarr;</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC & DYNAMIC DOCUMENT ENGINE FIXED -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 8;
+        let currentLang = 'en';
+
+        // Multilingual dictionary support
+        const translations = {
+            en: {
+                title: "Let's find schemes for you",
+                subtitle: "Tell us about yourself and your available documents. We'll match you with eligible government schemes instantly.",
+                requiredCat: "Required for this matched scheme",
+                conditionalCat: "May be required based on your criteria",
+                optionalCat: "Optional Supporting Document",
+                haveBtn: "I have this",
+                missingBtn: "I don't have this",
+                unsureBtn: "I'm not sure",
+                whyNeeded: "Why is this needed?"
+            },
+            hi: {
+                title: "आइए आपके लिए योजनाएं खोजें",
+                subtitle: "अपने बारे में और अपने उपलब्ध दस्तावेजों के बारे में बताएं। हम तुरंत आपकी पात्रता की जांच करेंगे।",
+                requiredCat: "इस योजना के लिए आवश्यक",
+                conditionalCat: "आपके मानदंडों के आधार पर आवश्यक हो सकता है",
+                optionalCat: "वैकल्पिक सहायक दस्तावेज़",
+                haveBtn: "यह मेरे पास है",
+                missingBtn: "यह मेरे पास नहीं है",
+                unsureBtn: "मुझे पक्का नहीं पता",
+                whyNeeded: "इसकी आवश्यकता क्यों है?"
+            },
+            bn: {
+                title: "আপনার জন্য স্কিম খুঁজুন",
+                subtitle: "আপনার প্রোফাইল অনুযায়ী স্কিম খুঁজে পেতে সাহায্য করুন।",
+                requiredCat: "এই স্কিমের জন্য প্রয়োজনীয়",
+                conditionalCat: "শর্ত সাপেক্ষে প্রয়োজন হতে পারে",
+                optionalCat: "ঐচ্ছিক নথি",
+                haveBtn: "আমার কাছে আছে",
+                missingBtn: "আমার কাছে নেই",
+                unsureBtn: "নিশ্চিত নই",
+                whyNeeded: "এটি কেন প্রয়োজন?"
+            },
+            mr: {
+                title: "तुमच्यासाठी योजना शोधा",
+                subtitle: "तुमच्या प्रोफाईलनुसार पात्र योजना शोधूया.",
+                requiredCat: "या योजनेसाठी आवश्यक",
+                conditionalCat: "निकषांवर आधारित आवश्यक असू शकते",
+                optionalCat: "पर्यायी कागदपत्र",
+                haveBtn: "माझ्याकडे आहे",
+                missingBtn: "माझ्याकडे नाही",
+                unsureBtn: "खात्री नाही",
+                whyNeeded: "हे का आवश्यक आहे?"
+            }
+        };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.getElementById('headerTitle').innerText = t.title;
+            document.getElementById('headerSubtitle').innerText = t.subtitle;
+            updateDynamicDocuments();
+        }
+
+        // Scheme & Document Database mapped to Occupations
+        const schemeDocumentDatabase = {
+            student: {
+                required: [
+                    {
+                        id: "identity_proof",
+                        name: "🪪 Identity Proof (Aadhaar / ID)",
+                        desc: "Used to verify legal identity and age bracket.",
+                        reason: "Identity verification is mandatory for beneficiary authentication under DBT guidelines.",
+                        sourceEvidence: "Section 4.1: 'Valid government-issued photo identity proof required.'"
+                    },
+                    {
+                        id: "student_id",
+                        name: "🎓 Student ID / Bonafide Certificate",
+                        desc: "Verified enrollment confirmation from your recognized academic institution.",
+                        reason: "Used to confirm active enrollment status in an eligible regular course.",
+                        sourceEvidence: "Section 5.2: 'Must submit signed bonafide certificate issued by Head of Institution.'"
+                    }
+                ],
+                conditional: [
+                    {
+                        id: "income_cert",
+                        name: "📄 Income Certificate",
+                        desc: "Required if the matched scholarship scheme has an income limit.",
+                        reason: "Used to verify that total family income falls below the prescribed threshold.",
+                        sourceEvidence: "Section 6.3: 'Family income must not exceed notified threshold limits.'"
+                    }
+                ],
+                optional: [
+                    {
+                        id: "bank_passbook",
+                        name: "🏦 Bank Account Passbook (Aadhaar Seeded)",
+                        desc: "Ensures direct transfer of scholarship grants.",
+                        reason: "Required for Direct Benefit Transfer (DBT) disbursement.",
+                        sourceEvidence: "Section 9: 'Disbursement via Aadhaar-enabled payment systems.'"
+                    }
+                ]
+            },
+            farmer: {
+                required: [
+                    {
+                        id: "identity_proof",
+                        name: "🪪 Identity Proof (Aadhaar Card)",
+                        desc: "Required for beneficiary authentication in agricultural portal.",
+                        reason: "Mandatory for deduplication and electronic verification.",
+                        sourceEvidence: "Guidelines Clause 3(a): 'Aadhaar seeding with land bank records is compulsory.'"
+                    },
+                    {
+                        id: "land_record",
+                        name: "📜 Land Ownership Record (Khasra / Khatauni)",
+                        desc: "Verifies cultivable agricultural land holding in your name.",
+                        reason: "Proves cultivable land ownership as recorded in state revenue archives.",
+                        sourceEvidence: "Operational Manual 4.2: 'Land records must explicitly show ownership.'"
+                    }
+                ],
+                conditional: [
+                    {
+                        id: "bank_passbook",
+                        name: "🏦 Bank Account Passbook",
+                        desc: "Linked with Aadhaar for installment disbursement.",
+                        reason: "Directly receives financial support funds.",
+                        sourceEvidence: "Clause 6: 'Active savings bank account details linked to NPCI.'"
+                    }
+                ],
+                optional: []
+            },
+            self_employed: {
+                required: [
+                    {
+                        id: "identity_proof",
+                        name: "🪪 Identity & Address Proof",
+                        desc: "Verifies entrepreneur identity.",
+                        reason: "Required for KYC compliance under micro-unit guidelines.",
+                        sourceEvidence: "Mudra Scheme Rulebook 2.1: 'Valid KYC documents of enterprise promoter.'"
+                    }
+                ],
+                conditional: [
+                    {
+                        id: "business_reg",
+                        name: "📑 Business Registration / Udyam Certificate",
+                        desc: "May be required if the scheme mandates formal enterprise registration.",
+                        reason: "Confirms scale and classification of the micro-enterprise.",
+                        sourceEvidence: "Clause 5.1: 'Proof of commercial establishment or Udyam registration number.'"
+                    }
+                ],
+                optional: []
+            },
+            salaried: {
+                required: [
+                    {
+                        id: "identity_proof",
+                        name: "🪪 Identity Proof",
+                        desc: "Verified personal identification.",
+                        reason: "Establishes identity for citizen welfare portal registration.",
+                        sourceEvidence: "General Framework Clause 2: 'Standard photo ID required.'"
+                    }
+                ],
+                conditional: [
+                    {
+                        id: "salary_slip",
+                        name: "📄 Salary Slip / Employment Certificate",
+                        desc: "Validates monthly wage earnings and employer details.",
+                        reason: "Ensures applicant falls within notified wage ceiling.",
+                        sourceEvidence: "Eligibility Rule 4: 'Gross monthly salary must not exceed threshold limit.'"
+                    }
+                ],
+                optional: []
+            },
+            labourer: {
+                required: [
+                    {
+                        id: "identity_proof",
+                        name: "🪪 Identity & Address Proof",
+                        desc: "Verified identity for labor board registration.",
+                        reason: "Confirms identity for state labor registry enrolment.",
+                        sourceEvidence: "BOCW Act Section 12: 'Worker identity verification.'"
+                    },
+                    {
+                        id: "labour_card",
+                        name: "👷 Registered Shramik / Labour Card",
+                        desc: "Proof of active engagement in manual/construction labor.",
+                        reason: "Validates registration status with state construction welfare board.",
+                        sourceEvidence: "Board Bylaws Clause 8: 'Active membership card issued by Labour Commissioner.'"
+                    }
+                ],
+                conditional: [
+                    {
+                        id: "bank_passbook",
+                        name: "🏦 Bank Account Details",
+                        desc: "For transfer of educational or medical assistance benefits.",
+                        reason: "Required for direct credit of welfare allowances.",
+                        sourceEvidence: "Welfare Fund Rule 14: 'Bank account in beneficiary's name.'"
+                    }
+                ],
+                optional: []
+            },
+            homemaker: {
+                required: [
+                    {
+                        id: "identity_proof",
+                        name: "🪪 Identity Proof (Aadhaar / Ration Card)",
+                        desc: "Verifies family head status and residential address.",
+                        reason: "Confirms household residency within jurisdiction.",
+                        sourceEvidence: "Scheme Guidelines 2.1: 'Proof of residential identity.'"
+                    }
+                ],
+                conditional: [
+                    {
+                        id: "income_cert",
+                        name: "📄 Family Income Certificate",
+                        desc: "Required if scheme is restricted to economically weaker households.",
+                        reason: "Verifies aggregate household income ceiling.",
+                        sourceEvidence: "Clause 3.2: 'Total household earnings below notified criteria.'"
+                    }
+                ],
+                optional: []
+            }
+        };
+
+        // Dynamically compute and populate Step 8 based on Step 4 occupation selection
+        function updateDynamicDocuments() {
+            const selectedOccupationCard = document.querySelector('#grid-occupation .option-card.selected');
+            let occKey = 'student'; // Default fallback
+            if (selectedOccupationCard) {
+                const text = selectedOccupationCard.innerText.toLowerCase();
+                if (text.includes('farmer')) occKey = 'farmer';
+                else if (text.includes('self-employed')) occKey = 'self_employed';
+                else if (text.includes('salaried')) occKey = 'salaried';
+                else if (text.includes('labourer')) occKey = 'labourer';
+                else if (text.includes('homemaker')) occKey = 'homemaker';
+                else if (text.includes('student')) occKey = 'student';
+            }
+
+            const data = schemeDocumentDatabase[occKey];
+            const container = document.getElementById('dynamicDocumentContainer');
+            const t = translations[currentLang];
+
+            let html = '';
+
+            // 1. Required Category
+            if (data.required && data.required.length > 0) {
+                html += `<div class="doc-category-title">⭐ ${t.requiredCat}</div>`;
+                data.required.forEach(doc => { html += generateDocCard(doc, t); });
+            }
+
+            // 2. Conditional Category
+            if (data.conditional && data.conditional.length > 0) {
+                html += `<div class="doc-category-title">⚠️ ${t.conditionalCat}</div>`;
+                data.conditional.forEach(doc => { html += generateDocCard(doc, t); });
+            }
+
+            // 3. Optional Category
+            if (data.optional && data.optional.length > 0) {
+                html += `<div class="doc-category-title">📌 ${t.optionalCat}</div>`;
+                data.optional.forEach(doc => { html += generateDocCard(doc, t); });
+            }
+
+            container.innerHTML = html;
+        }
+
+        function generateDocCard(doc, t) {
+            return `
+                <div class="doc-item-card" id="card-${doc.id}">
+                    <div class="doc-item-header">
+                        <div>
+                            <div class="doc-name">${doc.name}</div>
+                            <div class="doc-desc">${doc.desc}</div>
+                        </div>
+                        <div class="status-options">
+                            <button class="status-btn have" onclick="setDocStatus('${doc.id}', 'have')">🟢 ${t.haveBtn}</button>
+                            <button class="status-btn missing" onclick="setDocStatus('${doc.id}', 'missing')">🔴 ${t.missingBtn}</button>
+                            <button class="status-btn unsure" onclick="setDocStatus('${doc.id}', 'unsure')">🟡 ${t.unsureBtn}</button>
+                        </div>
+                    </div>
+                    <button class="why-toggle" onclick="toggleWhy('${doc.id}')">ℹ️ ${t.whyNeeded} &darr;</button>
+                    <div class="why-content" id="why-${doc.id}">
+                        <strong>Purpose:</strong> ${doc.reason}
+                        <div class="source-evidence">Source Evidence: "${doc.sourceEvidence}"</div>
+                    </div>
+                    <div class="missing-guidance" id="missing-box-${doc.id}">
+                        ⚠️ <strong>Document may be needed:</strong> You may need this document to complete application verification. <br>
+                        <strong>How to get it:</strong> Apply online via your state service portal or visit your nearest CSC. <a href="#" target="_blank">View Portal &rarr;</a>
+                    </div>
+                    <div class="unsure-guidance" id="unsure-box-${doc.id}">
+                        💡 <strong>Need help?</strong> You can verify whether your specific document satisfies this criterion before final submission. <a href="#" target="_blank">View Guidelines &rarr;</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function setDocStatus(docId, status) {
+            const card = document.getElementById(`card-${docId}`);
+            const haveBtn = card.querySelector('.status-btn.have');
+            const missingBtn = card.querySelector('.status-btn.missing');
+            const unsureBtn = card.querySelector('.status-btn.unsure');
+            const missingBox = document.getElementById(`missing-box-${docId}`);
+            const unsureBox = document.getElementById(`unsure-box-${docId}`);
+
+            haveBtn.classList.remove('active');
+            missingBtn.classList.remove('active');
+            unsureBtn.classList.remove('active');
+            missingBox.classList.remove('open');
+            unsureBox.classList.remove('open');
+
+            if (status === 'have') haveBtn.classList.add('active');
+            else if (status === 'missing') { missingBtn.classList.add('active'); missingBox.classList.add('open'); }
+            else if (status === 'unsure') { unsureBtn.classList.add('active'); unsureBox.classList.add('open'); }
+        }
+
+        function toggleWhy(docId) {
+            document.getElementById(`why-${docId}`).classList.toggle('open');
+        }
+
+        function updateUI() {
+            document.getElementById('validationAlert').style.display = 'none';
+            document.querySelectorAll('.step-container').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+            document.getElementById('btnBack').style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+
+            const btnNext = document.getElementById('btnNext');
+            btnNext.innerHTML = currentStep === totalSteps ? 'Find My Schemes &rarr;' : 'Next &rarr;';
+
+            for (let i = 1; i <= totalSteps; i++) {
+                const navItem = document.getElementById(`nav-step-${i}`);
+                if (!navItem) continue;
+                navItem.className = '';
+                const icon = navItem.querySelector('.status-icon');
+                if (i < currentStep) { navItem.classList.add('completed'); icon.innerHTML = '✓'; }
+                else if (i === currentStep) { navItem.classList.add('active'); icon.innerHTML = '•'; }
+                else { navItem.classList.add('pending'); icon.innerHTML = ''; }
+            }
+
+            document.getElementById('mobileProgressText').innerText = `Step ${currentStep} of ${totalSteps}`;
+            document.getElementById('mobileProgressBar').style.width = `${(currentStep / totalSteps) * 100}%`;
+
+            if (currentStep === 8) {
+                updateDynamicDocuments();
+            }
+        }
+
+        function handleNextClick() {
+            let isValid = true;
+            if (currentStep === 1 && !document.getElementById('inputAge').value.trim()) isValid = false;
+            else if (currentStep === 2 && !document.getElementById('selectState').value) isValid = false;
+            else if (currentStep >= 3 && currentStep <= 7) {
+                const stepIds = ['', '', 'grid-income', 'grid-occupation', 'grid-gender', 'grid-category', 'grid-disability'];
+                const grid = document.getElementById(stepIds[currentStep]);
+                if (grid && !grid.querySelector('.option-card.selected')) isValid = false;
+            }
+
+            if (!isValid) {
+                document.getElementById('validationAlert').style.display = 'block';
+                return;
+            }
+            changeStep(1);
+        }
+
+        function clearValidation() { document.getElementById('validationAlert').style.display = 'none'; }
+
+        function changeStep(direction) {
+            if (direction === 1 && currentStep === totalSteps) {
+                const btn = document.getElementById('btnNext');
+                btn.innerHTML = 'Analyzing Profile...';
+                btn.style.opacity = '0.8';
+                setTimeout(() => {
+                    alert("Profile submitted successfully! Connecting to scheme matching & document verification engine...");
+                    window.location.href = 'index.html';
+                }, 1200);
+                return;
+            }
+            currentStep += direction;
+            if (currentStep < 1) currentStep = 1;
+            if (currentStep > totalSteps) currentStep = totalSteps;
+            updateUI();
+        }
+
+        function jumpToStep(stepNumber) {
+            currentStep = stepNumber;
+            updateUI();
+        }
+
+        function selectCard(element, groupName) {
+            element.parentElement.querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+            element.classList.add('selected');
+            clearValidation();
+        }
+
+        function toggleVoice(btn, recognizedText) {
+            if (btn.classList.contains('listening')) return;
+            btn.classList.add('listening');
+            btn.innerHTML = '🎙️ Listening...';
+            setTimeout(() => {
+                btn.classList.remove('listening');
+                btn.innerHTML = '🎙️ Speak again';
+                if (currentStep === 1) document.getElementById('inputAge').value = '21';
+                else if (currentStep === 2) document.getElementById('selectState').value = 'Uttar Pradesh';
+                clearValidation();
+            }, 2000);
+        }
+
+        function triggerVoiceAssistant() {
+            alert("🎙️ Sarvam AI Voice Assistant Simulator:\n\nBased on your selected profile, your document checklist has been verified against scheme rules.");
+        }
+
+        updateUI();
+    </script>
+</body>
+</html>

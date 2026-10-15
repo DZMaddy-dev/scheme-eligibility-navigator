@@ -1,0 +1,216 @@
+[
+  {
+    "profile_id": "PROFILE-01",
+    "name": "Ramesh Kumar",
+    "label": "Marginal Rural Farmer (Low Income)",
+    "description": "Small landholding farmer from rural Uttar Pradesh living in a kutcha house, BPL card holder.",
+    "attributes": {
+      "age": 42,
+      "gender": "Male",
+      "annual_income": 75000,
+      "residence_area": "Rural",
+      "occupation": "Farmer",
+      "social_category": "OBC",
+      "is_bpl": true,
+      "landholding_hectares": 1.2,
+      "owns_pucca_house": false,
+      "pays_income_tax": false,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": false,
+      "is_student": false,
+      "state": "Uttar Pradesh",
+      "employment_status": "Self-Employed",
+      "has_disability": false
+    },
+    "expected_matches": [
+      "PM-KISAN",
+      "PM-JAY",
+      "PMAY-G"
+    ]
+  },
+  {
+    "profile_id": "PROFILE-02",
+    "name": "Sunita Devi",
+    "label": "Urban Street Vendor (Vegetable Hawker)",
+    "description": "Female street vendor in Delhi with Town Vending Committee survey slip, BPL family.",
+    "attributes": {
+      "age": 36,
+      "gender": "Female",
+      "annual_income": 120000,
+      "residence_area": "Urban",
+      "occupation": "Street Vendor",
+      "social_category": "SC",
+      "is_bpl": true,
+      "landholding_hectares": 0.0,
+      "owns_pucca_house": false,
+      "pays_income_tax": false,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": false,
+      "is_student": false,
+      "state": "Delhi",
+      "employment_status": "Unemployed",
+      "has_disability": false
+    },
+    "expected_matches": [
+      "PM-SVANIDHI",
+      "PM-JAY"
+    ]
+  },
+  {
+    "profile_id": "PROFILE-03",
+    "name": "Mohammad Asif",
+    "label": "Traditional Handloom Weaver / Artisan",
+    "description": "Traditional weaver and handloom craftsperson in Varanasi looking for modern tools and credit.",
+    "attributes": {
+      "age": 29,
+      "gender": "Male",
+      "annual_income": 190000,
+      "residence_area": "Urban",
+      "occupation": "Artisan",
+      "social_category": "OBC",
+      "is_bpl": false,
+      "landholding_hectares": 0.0,
+      "owns_pucca_house": true,
+      "pays_income_tax": false,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": false,
+      "is_student": false,
+      "state": "Uttar Pradesh",
+      "employment_status": "Unemployed",
+      "has_disability": false
+    },
+    "expected_matches": [
+      "PM-SVANIDHI"
+    ]
+  },
+  {
+    "profile_id": "PROFILE-04",
+    "name": "Kamala Bai",
+    "label": "Destitute Senior Citizen Widow (Age 68)",
+    "description": "Elderly widow residing in rural village with no family earner, below poverty line.",
+    "attributes": {
+      "age": 68,
+      "gender": "Female",
+      "annual_income": 35000,
+      "residence_area": "Rural",
+      "occupation": "Senior Citizen",
+      "social_category": "General",
+      "is_bpl": true,
+      "landholding_hectares": 0.0,
+      "owns_pucca_house": false,
+      "pays_income_tax": false,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": false,
+      "is_student": false,
+      "state": "Rajasthan",
+      "employment_status": "Unemployed",
+      "has_disability": false
+    },
+    "expected_matches": [
+      "PM-JAY",
+      "PMAY-G"
+    ]
+  },
+  {
+    "profile_id": "PROFILE-05",
+    "name": "Rahul Verma",
+    "label": "Meritorious Rural School Student (Class 8)",
+    "description": "14-year-old student studying in Government Middle School with 72% marks, low-income family.",
+    "attributes": {
+      "age": 14,
+      "gender": "Male",
+      "annual_income": 140000,
+      "residence_area": "Rural",
+      "occupation": "Student",
+      "social_category": "SC",
+      "is_bpl": false,
+      "landholding_hectares": 0.0,
+      "owns_pucca_house": true,
+      "pays_income_tax": false,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": false,
+      "is_student": true,
+      "state": "Bihar",
+      "employment_status": "Unemployed",
+      "has_disability": false
+    },
+    "expected_matches": []
+  },
+  {
+    "profile_id": "PROFILE-06",
+    "name": "Pooja & Ananya Patel",
+    "label": "Mother of 4-Year-Old Girl Child (Micro-entrepreneur)",
+    "description": "Urban self-employed mother running a boutique, wanting long-term secure savings for her 4yo daughter.",
+    "attributes": {
+      "age": 31,
+      "gender": "Female",
+      "annual_income": 450000,
+      "residence_area": "Urban",
+      "occupation": "Small Business",
+      "social_category": "General",
+      "is_bpl": false,
+      "landholding_hectares": 0.0,
+      "owns_pucca_house": true,
+      "pays_income_tax": true,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": true,
+      "is_student": false,
+      "state": "Gujarat",
+      "employment_status": "Unemployed",
+      "has_disability": false
+    },
+    "expected_matches": [
+      "SSY"
+    ]
+  },
+  {
+    "profile_id": "PROFILE-07",
+    "name": "Vikram Adani",
+    "label": "High-Income Corporate Professional",
+    "description": "IT enterprise consultant with ₹22 Lakh income and pucca house. Tests exclusion filtering.",
+    "attributes": {
+      "age": 34,
+      "gender": "Male",
+      "annual_income": 2200000,
+      "residence_area": "Urban",
+      "occupation": "Small Business",
+      "social_category": "General",
+      "is_bpl": false,
+      "landholding_hectares": 0.0,
+      "owns_pucca_house": true,
+      "pays_income_tax": true,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": false,
+      "is_student": false,
+      "state": "Maharashtra",
+      "employment_status": "Unemployed",
+      "has_disability": false
+    },
+    "expected_matches": []
+  },
+  {
+    "profile_id": "PROFILE-08",
+    "name": "Arun Prasad (Incomplete Data)",
+    "label": "Incomplete Profile (Uncertainty Test)",
+    "description": "Applicant omitted annual income and landholding size. Tests uncertainty and missing-info handling.",
+    "attributes": {
+      "age": 45,
+      "gender": "Male",
+      "annual_income": null,
+      "residence_area": "Rural",
+      "occupation": "Farmer",
+      "social_category": "OBC",
+      "is_bpl": null,
+      "landholding_hectares": null,
+      "owns_pucca_house": false,
+      "pays_income_tax": false,
+      "is_govt_employee": false,
+      "has_girl_child_under_10": false,
+      "is_student": false,
+      "state": "Madhya Pradesh",
+      "employment_status": "Self-Employed",
+      "has_disability": false
+    },
+    "expected_matches": []
+  }
+]

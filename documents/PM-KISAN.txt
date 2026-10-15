@@ -1,0 +1,35 @@
+GOVERNMENT OF INDIA - MINISTRY OF AGRICULTURE & FARMERS WELFARE
+SCHEME OPERATIONAL GUIDELINES: PRADHAN MANTRI KISAN SAMMAN NIDHI (PM-KISAN)
+Notification No.: 1-1/2019-Credit-I | Version: 2.1-2026 | Last Updated: 2026-03-01
+Applicability: Pan-India (All States and Union Territories)
+
+1. SCHEME OBJECTIVE AND SCOPE
+1.1 The Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) aims to augment the income of all landholding farmer families across the country to enable them to take care of expenses related to agriculture and allied activities as well as domestic needs.
+1.2 Under the Scheme, direct financial benefit of Rs. 6,000/- per annum will be disbursed directly into the bank accounts of the beneficiary families in three equal 4-monthly installments of Rs. 2,000/- each.
+
+2. ELIGIBILITY CRITERIA
+2.1 Definition of Beneficiary Family: A landholder farmer family is defined as a family comprising of husband, wife, and minor children who own cultivable land as per the land records of the concerned State/UT.
+2.2 Age Requirement: Applicant must be an adult Indian citizen aged 18 years or above.
+2.3 Landholding Requirement: The applicant must possess cultivable agricultural land registered in their name. The previous 2-hectare upper limit has been removed, making all landholding farmer families eligible regardless of land size, provided they own cultivable land.
+2.4 State Applicability: The scheme is active across all States and Union Territories of India.
+
+3. EXCLUSION CRITERIA (STATUTORY DISQUALIFICATIONS)
+The following categories of beneficiaries of higher economic status shall not be eligible for benefit under the scheme:
+(a) All Institutional Landholders.
+(b) Farmer families in which one or more of its members belong to following categories:
+    i. Former and present holders of constitutional posts.
+    ii. Former and present Ministers/State Ministers and former/present Members of Lok Sabha, Rajya Sabha, State Legislative Assemblies, State Legislative Councils.
+    iii. Serving or retired officers and employees of Central/State Government Ministries, Offices and Departments and field units.
+    iv. All superannuated/retired pensioners whose monthly pension is Rs. 10,000/- or more.
+    v. All persons who paid Income Tax in the last assessment year.
+    vi. Professionals like Doctors, Engineers, Lawyers, Chartered Accountants, and Architects registered with Professional bodies and carrying out profession by undertaking practices.
+
+4. MANDATORY REQUIRED DOCUMENTS
+4.1 Aadhaar Card: Mandatory biometrically verified Aadhaar card of the applicant linked to mobile number.
+4.2 Land Ownership Record (Khatauni / RoR / 7/12 Extract): Official revenue land title proving cultivable land registered in the applicant's name.
+4.3 Active Bank Account Passbook: DBT-enabled bank account linked with Aadhaar NPCI mapper.
+
+5. APPLICATION AND VERIFICATION PROCESS
+5.1 Online Application: Eligible farmers can apply directly via the PM-KISAN portal (https://pmkisan.gov.in) under the 'Farmer Corner' module.
+5.2 Offline Facility: Farmers can submit documents at local Common Service Centres (CSCs) or State Nodal Agriculture Officers.
+5.3 Mandatory e-KYC: OTP-based or biometric e-KYC is strictly required before disbursement of any financial installment.
